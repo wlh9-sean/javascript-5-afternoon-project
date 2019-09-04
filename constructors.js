@@ -129,7 +129,8 @@ User.prototype.addSavedPost = function(id, title, rating){
 
 // Code here
 User.prototype.removeSavedPost = function(id){
-  this.savedPosts.splice(id)
+  let index = this.savedPosts.findIndex(post => post.id === id)
+  this.savedPosts.splice(index, 1)
 }
 
 ////////// PROBLEM 7 //////////
@@ -139,9 +140,7 @@ User.prototype.removeSavedPost = function(id){
 
 // Code here
 
-User.prototype.changePostRating = function(id, newRating){
-  this.savedPosts.savedPosts(
-    this.id = id,
-    this.newRating = newRating
-  )
+User.prototype.changePostRating = function(id, rating){
+  let index = this.savedPosts.findIndex(post => post.id === id)
+  this.savedPosts[index].rating = rating
 }
